@@ -1,0 +1,317 @@
+<!-- index.html — Efik STEM Tutor (Imagine Cup) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Efik STEM Tutor — Imagine Cup Submission</title>
+  <meta name="description" content="Efik STEM Tutor: Bridging the Linguistic Divide in Science through culturally grounded AI." />
+  <style>
+    :root{
+      --bg:#0b1020;
+      --card:#111a33;
+      --text:#e9eefc;
+      --muted:#b8c4ea;
+      --accent:#7aa2ff;
+      --accent2:#8ef0c0;
+      --border:rgba(255,255,255,.12);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; background:radial-gradient(1200px 600px at 20% 0%, rgba(122,162,255,.18), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, rgba(142,240,192,.12), transparent 55%),
+      var(--bg);
+      color:var(--text);
+      font-family:var(--sans);
+      line-height:1.55;
+    }
+    a{color:var(--accent); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      padding:48px 20px 22px;
+      border-bottom:1px solid var(--border);
+      background:linear-gradient(180deg, rgba(255,255,255,.03), transparent);
+    }
+    .container{max-width:1020px; margin:0 auto; padding:0 20px}
+    .tag{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:6px 12px; border:1px solid var(--border); border-radius:999px;
+      color:var(--muted); font-size:14px; background:rgba(255,255,255,.03)
+    }
+    .tag b{color:var(--text)}
+    h1{
+      margin:14px 0 10px;
+      font-size:42px; line-height:1.12;
+      letter-spacing:-0.02em;
+    }
+    .subtitle{color:var(--muted); font-size:18px; max-width:780px}
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      padding:22px 0 46px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      h1{font-size:34px}
+    }
+    .card{
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:18px 18px;
+      box-shadow:var(--shadow);
+    }
+    .card h2{margin:0 0 8px; font-size:20px}
+    .card h3{margin:16px 0 8px; font-size:16px; color:var(--muted); font-weight:650; text-transform:uppercase; letter-spacing:.06em}
+    .bullets{margin:10px 0 0; padding-left:18px}
+    .bullets li{margin:8px 0}
+    .pillrow{display:flex; flex-wrap:wrap; gap:10px; margin-top:12px}
+    .pill{
+      font-size:13px; color:var(--muted);
+      padding:6px 10px; border-radius:999px;
+      border:1px solid var(--border);
+      background:rgba(0,0,0,.18);
+    }
+    .accent{
+      color:var(--text);
+      border-color:rgba(122,162,255,.35);
+      background:rgba(122,162,255,.10);
+    }
+    .accent2{
+      color:var(--text);
+      border-color:rgba(142,240,192,.35);
+      background:rgba(142,240,192,.10);
+    }
+    .code{
+      font-family:var(--mono);
+      font-size:13px;
+      background:rgba(0,0,0,.35);
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:14px 14px;
+      overflow:auto;
+      white-space:pre;
+    }
+    .kpi{
+      display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; margin-top:12px
+    }
+    @media (max-width: 720px){ .kpi{grid-template-columns:1fr} }
+    .kpi > div{
+      border:1px solid var(--border); border-radius:14px; padding:12px;
+      background:rgba(0,0,0,.18);
+    }
+    .kpi .n{font-size:22px; font-weight:800}
+    .kpi .l{color:var(--muted); font-size:13px; margin-top:2px}
+    .foot{
+      padding:28px 0 44px;
+      border-top:1px solid var(--border);
+      color:var(--muted);
+      font-size:14px;
+    }
+    .btnbar{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border:1px solid var(--border);
+      border-radius:12px;
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-weight:650;
+    }
+    .btn:hover{background:rgba(255,255,255,.06); text-decoration:none}
+    .warn{color:#ffd9a0}
+    .small{font-size:13px; color:var(--muted)}
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <div class="tag">
+      <span>Microsoft Imagine Cup</span>
+      <span>•</span>
+      <b>Efik STEM Tutor</b>
+    </div>
+    <h1>Efik STEM Tutor: Bridging the Linguistic Divide in Science</h1>
+    <p class="subtitle">
+      Empowering the next generation of African scientists through culturally grounded AI —
+      a constrained reasoning engine that explains STEM concepts in the Efik language.
+    </p>
+
+    <div class="pillrow">
+      <span class="pill accent">Grounded Reasoning (22,939-row STEM corpus)</span>
+      <span class="pill accent2">Efik Base-20 Math (Vigesimal)</span>
+      <span class="pill">Cultural Examples (cassava, Calabar River, farming)</span>
+      <span class="pill">Azure AI Foundry / Azure OpenAI</span>
+    </div>
+
+    <div class="btnbar">
+      <!-- Replace these links with your real repo links -->
+      <a class="btn" href="./README.md">Readme</a>
+      <a class="btn" href="./docs/">Docs</a>
+      <a class="btn" href="./data/">Sample Data</a>
+      <a class="btn" href="./src/">Source</a>
+    </div>
+
+    <p class="small warn">
+      Note: Update “Ensign College” vs “Ensign Global College” wording to match your official institution name.
+    </p>
+  </div>
+</header>
+
+<main class="container">
+  <section class="grid">
+    <article class="card">
+      <h2>🌍 The Problem: The “Language Tax” in STEM</h2>
+      <p>
+        Many Nigerian students learn STEM subjects in a non-native language. This creates a high cognitive load:
+        students must decode complex English syntax and scientific concepts at the same time.
+        In Efik-speaking communities in Cross River State, this barrier leads to early disengagement from science and technology.
+      </p>
+      <p>
+        <b>Efik STEM Tutor</b> removes this friction by teaching Science, Technology, Engineering, and Mathematics in the learner’s
+        mother tongue — using logic that reflects local cultural reality.
+      </p>
+
+      <h3>What judges should look for</h3>
+      <ul class="bullets">
+        <li><b>Not translation</b>: culturally grounded scientific interpretation.</li>
+        <li><b>Not a generic chatbot</b>: constrained outputs through system-level grounding.</li>
+        <li><b>Technical novelty</b>: Efik vigesimal math logic inside explanations.</li>
+      </ul>
+
+      <div class="kpi">
+        <div>
+          <div class="n">22,939</div>
+          <div class="l">Rows in Efik STEM dataset (grounding layer)</div>
+        </div>
+        <div>
+          <div class="n">Base-20</div>
+          <div class="l">Efik vigesimal math logic (Edịp, Aba, Ata)</div>
+        </div>
+        <div>
+          <div class="n">Oct 2026</div>
+          <div class="l">Target launch timeline (graduation project)</div>
+        </div>
+      </div>
+    </article>
+
+    <aside class="card">
+      <h2>🚀 The Solution: A Grounded Reasoning Engine</h2>
+      <p>
+        Unlike generic chatbots that often hallucinate translations, Efik STEM Tutor uses <b>System-Level Grounding</b>
+        to enforce scientific and linguistic accuracy.
+      </p>
+
+      <h3>Key innovations</h3>
+      <ul class="bullets">
+        <li><b>Linguistic Grounding Layer</b>: curated Efik STEM vocabulary prevents vague or incorrect terms.</li>
+        <li><b>Vigesimal Math Logic</b>: respects Efik base-20 counting for explanations and calculations.</li>
+        <li><b>Contextual RAG</b>: explains abstract concepts through local examples (cassava farming, Calabar River, etc.).</li>
+      </ul>
+
+      <h3>Quick demo prompts</h3>
+      <div class="code">1) Explain photosynthesis using cassava and Efik terms.
+2) Multiply 20 by 3 using Efik vigesimal logic.
+3) Explain gravity using a farm example in Cross River State.</div>
+    </aside>
+  </section>
+
+  <section class="card">
+    <h2>🛠️ Technical Architecture</h2>
+    <p>
+      The system is designed on the Microsoft Azure stack for scalability and reliability.
+    </p>
+
+    <ul class="bullets">
+      <li><b>Reasoning Core</b>: Azure OpenAI Service (GPT-4o)</li>
+      <li><b>Grounding Layer</b>: System metaprompting + CSV-based data injection via Azure AI Foundry</li>
+      <li><b>Deployment Path</b>: Azure App Service + Azure Functions for low-latency mobile access</li>
+    </ul>
+
+    <h3>Flow</h3>
+    <div class="code">User Input (Efik/English)
+  --> Azure AI Grounding Layer (22k STEM Rows)
+     --> GPT-4o Reasoning (System-Defined Rules)
+        --> Localized Scientific Explanation (Verified Efik)</div>
+
+    <p class="small">
+      Tip: If you have an architecture diagram, save it as <span style="font-family:var(--mono)">docs/architecture.png</span>
+      and add it below with an &lt;img&gt; tag.
+    </p>
+  </section>
+
+  <section class="grid">
+    <article class="card">
+      <h2>🛡️ Responsible AI & Safety</h2>
+      <p>
+        In alignment with Microsoft’s Responsible AI principles, the tutor implements strict guardrails.
+      </p>
+      <ul class="bullets">
+        <li><b>Hallucination Guardrails</b>: forbidden to invent Efik terms; must use verified STEM dictionary primitives.</li>
+        <li><b>Cultural Fidelity</b>: enforces correct distinctions (e.g., “Udia” as food) to maintain meaning.</li>
+        <li><b>Transparency</b>: explanations can be traced to grounded vocabulary rules.</li>
+      </ul>
+    </article>
+
+    <article class="card">
+      <h2>📂 Repository Structure</h2>
+      <ul class="bullets">
+        <li><b>/src</b>: system_prompt.txt and core tutor logic</li>
+        <li><b>/data</b>: sample_dataset.csv showing the structure of the 22k-row corpus</li>
+        <li><b>/docs</b>: architecture diagrams + “Scientific Primitives” reference</li>
+        <li><b>/math</b>: documentation for Efik Vigesimal (Base-20) logic</li>
+      </ul>
+
+      <h3>What to include before submission</h3>
+      <ul class="bullets">
+        <li>Add <b>docs/architecture.png</b> (even a simple diagram helps judges fast).</li>
+        <li>Add a short <b>demo.md</b> with 3 screenshots of the working tutor outputs.</li>
+        <li>Keep prompts + outputs short and reproducible.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="card">
+    <h2>📅 Roadmap to 2026</h2>
+    <ul class="bullets">
+      <li><b>Feb 2026</b>: MVP Prototype & Imagine Cup submission</li>
+      <li><b>July 2026</b>: Beta testing in pilot schools in Cross River State, Nigeria</li>
+      <li><b>Oct 2026</b>: Final deployment & graduation project launch</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>👨‍💻 Author</h2>
+    <p>
+      <b>Ekpenyong Mfon</b><br />
+      Student, <span class="warn"><b>Ensign College</b></span> (verify official name)<br />
+      Project for Microsoft Imagine Cup
+    </p>
+    <p class="small">
+      If you want a judge-friendly landing page, host this file using GitHub Pages:
+      Repository → Settings → Pages → Deploy from branch → <b>/ (root)</b> → Save.
+    </p>
+  </section>
+
+  <section class="foot">
+    <div class="container" style="padding:0">
+      <p>
+        <b>Efik STEM Tutor</b> — “Science in our tongue, progress for our people.”
+      </p>
+      <p class="small">
+        © <span id="y"></span> Ekpenyong Mfon. Built for educational inclusion and responsible AI.
+      </p>
+    </div>
+  </section>
+</main>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
