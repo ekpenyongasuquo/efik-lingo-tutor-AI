@@ -12,5 +12,5 @@ A localized AI system grounded in a 22,939-row dataset to teach STEM subjects in
 
 ## Links
 - [Pitch Video](YOUR_YOUTUBE_LINK)
-- [Demo Video](YOUR_YOUTUBE_LINK)
+- [Demo Video](https://youtu.be/RRNvnzQyDXs)
 - [Live Landing Page](https://ekpenyongasuquo.github.io/efik-lingo-tutor-AI/)
